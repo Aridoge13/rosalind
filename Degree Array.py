@@ -15,7 +15,7 @@ def readdata(location):
     return nodes, edges
 
 def delnodes(nodes, edges):
-    for i in xrange(len(edges)):
+    for i in range(len(edges)):
         if edges[i][0] not in [item for sublist in edges[:i] + edges[i+1:] for item in sublist]:
             nodes.pop(nodes.index(edges[i][0]))
         if edges[i][1] not in [item for sublist in edges[:i] + edges[i+1:] for item in sublist]:
@@ -37,6 +37,6 @@ def Deg(nodes, edges):
 def main():
     a,b = readdata('rosalind_deg.txt')
     a = delnodes(a, b)
-    print Deg(a, b)
+    print(Deg(a, b))
 
 main()
